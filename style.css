@@ -1,0 +1,61 @@
+/* :root{
+  box-sizing: border-box;
+} *,
+::before,
+::after {
+  box-sizing: inherit;
+}
+body{
+  margin: 0;
+  padding: 0;
+  
+  background-image: url(images/motherboard.jpg);
+  background-size: 100vmax;
+}
+header {
+  display: flex;
+  font-family: Gotham-Light,sans-serif;
+  align-self: auto;
+  background-color: #a79344;
+}
+h1{
+  margin: 0;
+}
+
+.title {
+  flex: 1;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title > div {
+  color:white;
+  text-shadow: 1px 2px  black;
+  font-size: 1.5em;
+}
+nav {
+  flex: 3;
+  margin-right:auto ;
+  color: white;
+}
+nav > ul{
+  display: flex;
+  /* flex-direction: space-between; */
+  /* flex-wrap: nowrap; */
+  /* width: 100%; */
+  justify-items: space-between;
+  
+}
+nav > ul > * {
+  list-style: none;
+  flex: 1;
+}
+main{
+  color: white;
+  text-shadow: 1px 2px 3px  rgb(0, 0, 0);
+  /* background-color:rgba(11, 38, 71, 0.81); */
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+} */
