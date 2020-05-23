@@ -1,86 +1,76 @@
-* {
+:root {
   box-sizing: border-box;
 }
 
-:root {
-  --h1: calc(var(--h2) * 1.125);
-  --h2: calc(var(--h3) * 1.125);
-  --h3: calc(var(--h4) * 1.125);
-  --h4: calc(var(--h5) * 1.125);
-  --h5: calc(var(--h6) * 1.125);
-  --h6: calc((1em));
-}
-body{
-  background-color: rgb(134, 119, 119);
-}
-li{
-  list-style:none;
+*,
+::before,
+::after {
+  box-sizing: inherit;
 }
 
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
-a:hover{
-  color: yellow;
-  font-size: calc(var(--h5)*.7);
-}
-{
-  color: yellow;
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url(../images/motherboard.jpg);
+  background-size: 100vmax;
 }
 
-.style-main {
-  background-image: linear-gradient(90deg, rgb(192, 45, 40), rgb(230, 98, 37));
-  background-clip: content-box;
+header {
+  display: flex;
+  font-family: Gotham-Light, sans-serif;
+  align-self: auto;
+  background-color: #a79344;
+}
+
+h1 {
+  margin: 0;
 }
 
 .title {
-  display: flex;
-  flex: wrap;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.7);
-
-  height: 4rem;
-}
-
-img {
-  height: 100%;
-  width: 100%;
-}
-
-.logo {
   flex: 1;
-}
-
-.holder {
-  flex: 3;
-}
-
-.holder {
+  margin-left: auto;
   display: flex;
-  flex: wrap;
-  padding: 0 1.5rem;
   align-items: center;
+  justify-content: center;
 }
 
-.navigation {
+.title>div {
+  color: white;
+  text-shadow: 1px 2px black;
+  font-size: 1.5em;
+}
+
+nav {
+  flex: 3;
+  margin-right: auto;
+  color: white;
+  margin-bottom: 0;
+}
+
+nav>ul {
+  display: flex;
+  justify-items: space-between;
+}
+
+nav>ul>*, a {
+  list-style: none;
   flex: 1;
-  color: #fff;
+  text-decoration: initial;
+  color: white;
+}
+nav > ul >* :visited{
+  color: gold;
+  font-size: 1.2em;
 }
 
-
-.line {
-  border: 1px solid red;
+main {
+  color: white;
+  text-shadow: 1px 2px 3px rgb(0, 0, 0);
+  background-color: rgba(11, 38, 71, 0.81);
+  height: 100vh;
   margin: 0;
+  padding: 0;
 }
-article{
-  margin:0.8rem;
-  border-radius: 30px;
-  padding: 1rem;
-  background-color: rgb(155, 255, 213);
-}
-
-p{
-  font-size: var(--h3);
-  color: rgb(221, 72, 154);
+hr{ 
+  color: white;
 }

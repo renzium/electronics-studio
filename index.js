@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 4000;
 
 const server = express() // create an express server
 
@@ -14,13 +14,13 @@ server.set("view engine", "ejs"); // declare a template engine for converting th
 
 // register routes
 
-server.get("/", (req, res) => res.render("pages/index")); // register the home route to point to the index.ejs template
-server.get("/contacts", (req, res) => res.render("pages/contacts")) // register the contacts routes to point to the contacts.ejs template
-server.get("/about", (req, res) => res.render("pages/about")) // register the about routes to point to the about.ejs 
-server.get("/music", (req, res) => res.render("pages/music")) // register the about routes to point to the about.ejs 
-server.get("/gallery", (req, res) => res.render("pages/my-picture")) // register the about routes to point to the about.ejs 
-server.get("/hot-spot", (req, res) => res.render("pages/hot-spot")) // register the about routes to point to the about.ejs 
-server.get("/paint", (req, res) => res.render("pages/paint.ejs")) // register the about routes to point to the about.ejs 
+server.get("/", (req, res) => res.render("pages/home")); // register the home route to point to the index.ejs template
+server.get("/courses", (req, res) => res.render("pages/courses")) // register the contacts routes to point to the contacts.ejs template
+server.get("/learning", (req, res) => res.render("pages/learning")) // register the about routes to point to the about.ejs 
+server.get("/pricing", (req, res) => res.render("pages/pricing")) // register the about routes to point to the about.ejs 
+server.get("/login", (req, res) => res.render("pages/login")) // register the about routes to point to the about.ejs 
+server.get("/join-now", (req, res) => res.render("pages/join-now")) // register the about routes to point to the about.ejs 
+server.get("/zoom", (req, res) => res.render("pages/zoom")) // register the about routes to point to the about.ejs 
 
 
 server.listen(PORT, () => console.log(`Listening on ${PORT}`));
