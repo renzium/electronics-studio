@@ -1,5 +1,6 @@
 :root {
   box-sizing: border-box;
+  font-size:  calc(0.em + 2vw);
 }
 
 *,
@@ -52,13 +53,15 @@ nav>ul {
   justify-items: space-between;
 }
 
-nav>ul>*, a {
+nav>ul>*,
+a {
   list-style: none;
   flex: 1;
   text-decoration: initial;
   color: white;
 }
-nav > ul >* :visited{
+
+nav>ul>* :visited {
   color: gold;
   font-size: 1.2em;
 }
@@ -71,6 +74,7 @@ main {
   margin: 0;
   padding: 0;
 }
-hr{ 
+
+hr {
   color: white;
 }
