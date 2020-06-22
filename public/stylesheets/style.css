@@ -1,6 +1,9 @@
- :root {
-box-sizing: border-box;
-font-size:  calc(0.1em + 2vmax);
+:root {
+  box-sizing: border-box;
+  font-size: calc(0.1em + 2vmax);
+  --Dark-blue:#005073;
+  --General-blue:#107dac;
+  --Stand-out:#189ad3;
 }
 
 *,
@@ -13,34 +16,32 @@ body {
   margin: 0;
   padding: 0;
   background-image: url(../images/motherboard.jpg);
-  background-size: fill;
+  background-size: cover;
 }
 
 header {
+  mix-blend-mode: hard-light;
   font-family: Gotham-Light, sans-serif;
   align-self: auto;
-  background-color: #a79344;
+  background-color: var(--Dark-blue);
 }
 
 h1 {
   margin: 0;
 }
- 
+
 .title {
   color: white;
-  font-size: 3.5vw ;
+  font-size: 3.5vw;
   font-family: cursive;
   text-shadow: 1px 2px black;
   padding-left: 0;
   margin-left: 0;
-} 
+}
 
-
-
-nav>ul {
-
+nav > ul {
   display: grid;
-  grid-template-columns: repeat(8,auto);
+  grid-template-columns: repeat(8, auto);
   height: 1em;
   padding: 0;
   margin: 0;
@@ -49,33 +50,35 @@ nav>ul {
   justify-content: space-between;
 }
 
-nav>ul>* , 
-a{
-
+nav > ul > *,
+a {
   list-style: none;
   text-decoration: initial;
   color: white;
   font-size: 0.8em;
 }
 
-
-
-nav>ul>* :visited {
+nav > ul > * :visited {
   color: gold;
   font-size: 1.2em;
 }
-
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(11, 38, 71, 0.81);
+  z-index: -1;
+}
 
 main {
-  display: flex;  /*if I do not use "display : flex" I will run the of the margin for the "login" class overriding the margin for the "main" tag. */
-  background-color: rgba(11, 38, 71, 0.81);
+  display: flex;
   color: white;
   text-shadow: 1px 2px 3px rgb(0, 0, 0);
-  /* min-height: fit-content ; */
   justify-content: center;
-height: calc(102vh - 2.8em);
 }
-.main--banner{
+.main--banner {
   margin: auto 2vmin;
   text-align: center;
   line-height: 5em;
@@ -86,16 +89,53 @@ height: calc(102vh - 2.8em);
   padding: 1em;
 }
 
-.login{
-  margin: auto;
-  width: 36vmax;
-  height: 37vmax;
-background-image: radial-gradient(42em at 19% 20%, yellow, white);
-} 
+.login {
+  /* display: block; */
+  margin: 0;
+  padding:0;
+  width: 20em;
+  min-height: 20em;
+  height: fit-content;
+  /* height: fit-content; */
+  /* background-image: radial-gradient(42em at 19% 20%, hsla(0, 0%, 100%, 0.322), gray); */
+  background-color: hsla(0, 0%, 100%, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   transition: background-color,border-radius ;
+  animation: move 3s ease-in-out infinite;
+  animation-fill-mode: backwards;
+  
+}
+@keyframes move{
+  0%{
+    transform: translateX(0);
+  }
+  25%{
+    transform: translateX(-400px);
+  }
+  50%{
+    transform: translateX(400px);
+  }
+  0%{
+    transform: translateX(0);
+  }
+}
+.login:hover {
+  background-color: hsla(0, 0%, 50%, 0.6);
+  color: lavender;
+  border-color: blue;
+  transition-duration: 0.5s;
+  border-radius: 0.4em;
+  border-right:0.2em solid black;
+  border-bottom: 0.2em solid black;
+}
 form {
-  margin:2em 1.5em;
-} 
-form > * {
+  width: 95%;
+margin: 0;
+padding: 0;
+}
+.login--details {
   display: block;
   border: 0;
   border-radius: 0.1em;
@@ -103,16 +143,38 @@ form > * {
   width: 100%;
   font-size: 0.8rem;
 }
-img{
+img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
 }
-.login--pic-container{
-  width: 5em;
-  margin:2em auto -1em;
+.login--pic-container {
+  width: 7em;
+  /* margin: 2em auto -1em; */
+  margin: auto ;
 }
 label {
-  color: black;
- text-shadow: 1px 2px 3px #29031f;
+  color: #061c38;
+  text-shadow: none;
+  font-family: monospace;
+  /* text-shadow: 1px 2px 3px #29031f; */
 }
+.login--button{
+  display: block;
+  margin:1em auto;
+  margin-top: 2em;
+  background-color: hsl(180, 50%, 50%);
+  border: 0;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3em 1em;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.login--button:hover {
+    background-color: hsl(0, 50%, 50%);
+    border-radius: 1em;
+  }
+/* 
+#005073 (0, 80, 115) #107dac (16, 125, 172) #189ad3 (24, 154, 211) #1ebbd7 (30, 187, 215) #71c7ec (113, 199, 236) */

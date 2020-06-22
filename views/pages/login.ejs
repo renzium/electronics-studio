@@ -7,17 +7,21 @@
 
 <body>
  <% include ../partials/header.ejs %> 
+ <div class="overlay">
+
+ </div>
 
  <main>
   <div class="login">
-    <div class="login--pic-container">
-      <img src="/images/IMG_5098~2.JPG" alt="image erro!!">
-    </div>
     <form action="">
-      <label for="username">username</label>
-      <input class = "username" type="text" placeholder="enter username or email">
-      <label for="password">password</label>
-      <input type="password" name="password" id="" placeholder="enter your password">
+      <div class="login--pic-container">
+        <img src="/images/IMG_5098~2.JPG" alt="image erro!!">
+      </div>
+      <label class="login--details" for="username">username</label>
+      <input class = "login--details username" type="text" placeholder="enter username or email">
+      <label class= "login--details"for="password">password</label>
+      <input class="login--details" type="password" name="password" id="" placeholder="enter your password">
+      <button class="login--button" type="submit">login</button>
     </form>
   </div>
   </main>
