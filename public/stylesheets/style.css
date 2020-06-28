@@ -17,6 +17,7 @@ body {
   padding: 0;
   background-image: url(../images/motherboard.jpg);
   background-size: cover;
+  height: 100vh;
 }
 
 header {
@@ -74,9 +75,23 @@ nav > ul > * :visited {
 
 main {
   display: flex;
+  flex-direction: column;
   color: white;
   text-shadow: 1px 2px 3px rgb(0, 0, 0);
   justify-content: center;
+}
+h1{
+  font-family: 'Righteous',
+  cursive;
+}
+p{
+  font-family: 'MuseoModerno',
+  cursive;
+}
+.main--banner-vertic-align{
+  display: flex;
+  height: calc(100vh - 4.9vw);
+  align-items: center;
 }
 .main--banner {
   margin: auto 2vmin;
@@ -88,10 +103,25 @@ main {
   border-radius: 0.5em;
   padding: 1em;
 }
-
+.main--banner > div {
+  display: flex;
+}
+.main--banner > div > *{
+  display: inline;
+  line-height: 0.8;
+  padding: 0.5em;
+}
+.login--vertic-align{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 4.9vw);
+}
 .login {
   /* display: block; */
   margin: 0;
+
   padding:0;
   width: 20em;
   min-height: 20em;
@@ -107,20 +137,7 @@ main {
   animation-fill-mode: backwards;
   
 }
-@keyframes move{
-  0%{
-    transform: translateX(0);
-  }
-  25%{
-    transform: translateX(-400px);
-  }
-  50%{
-    transform: translateX(400px);
-  }
-  0%{
-    transform: translateX(0);
-  }
-}
+
 .login:hover {
   background-color: hsla(0, 0%, 50%, 0.6);
   color: lavender;
@@ -176,5 +193,100 @@ label {
     background-color: hsl(0, 50%, 50%);
     border-radius: 1em;
   }
+
 /* 
 #005073 (0, 80, 115) #107dac (16, 125, 172) #189ad3 (24, 154, 211) #1ebbd7 (30, 187, 215) #71c7ec (113, 199, 236) */
+
+/* 
+
+
+
+To continue from here later
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modular CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dropdown">
+    <button class="dropdown__toggle">Main  Menu</button>
+    <div class="dropdown__drawer">
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/coffees">Coffees</a></li>
+        <li><a href="/brewers">Brewers</a></li>
+        <li><a href="/specials">Specials</a></li>
+        <li><a href="/about">About us</a></li>
+      </ul>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html> 
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown__toggle {
+  padding: 0.5em 2em 0.5em 1.5em;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  
+  background-color: #eee;
+}
+
+.dropdown__toggle::after {
+  content: "";
+  position: absolute;
+  right: 1em;
+  border: 0.3em solid;
+  border-color: black transparent transparent;
+}
+
+.dropdown__drawer {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 2.1em;
+  min-width: 100%;
+  background-color: #eee;
+}
+
+.dropdown.is-open .dropdown__toggle::after {
+  top: 0.7em;
+  border-color: transparent transparent black;
+}
+
+.dropdown.is-open .dropdown__drawer {
+  display: block;
+}
+
+.menu {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  border: 1px solid #999;
+}
+
+.menu>li+li {
+  border-top: 1px solid #999;
+}
+
+.menu>li>a {
+  display: block;
+  padding: 0.5em 1.5em;
+  background-color: #eee;
+  color: #369;
+  text-decoration: none;
+}
+
+.menu>li>a:hover {
+  background-color: #fff;
+}
+
+*/
