@@ -15,16 +15,19 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url(../images/motherboard.jpg);
-  background-size: cover;
-  height: 100vh;
+  background-image:url(../images/fram-wall.png),url(../images/motherboard.jpg);
+  background-size: cover,cover;
+  min-height:100vh;
+  background-blend-mode: hard-light;
 }
 
 header {
-  mix-blend-mode: hard-light;
+  position: relative;
+  /* mix-blend-mode: hard-light; */
   font-family: Gotham-Light, sans-serif;
   align-self: auto;
   background-color: var(--Dark-blue);
+  z-index: 1;
 }
 
 h1 {
@@ -63,15 +66,7 @@ nav > ul > * :visited {
   color: gold;
   font-size: 1.2em;
 }
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(11, 38, 71, 0.81);
-  z-index: -1;
-}
+
 
 main {
   display: flex;
@@ -92,6 +87,7 @@ p{
   display: flex;
   height: calc(100vh - 4.9vw);
   align-items: center;
+  justify-content: center;
 }
 .main--banner {
   margin: auto 2vmin;
@@ -106,10 +102,13 @@ p{
 .main--banner > div {
   display: flex;
 }
-.main--banner > div > *{
-  display: inline;
+.main--banner > div > .login--button{
   line-height: 0.8;
-  padding: 0.5em;
+  padding: 0.5em 0.1em;
+  font-size: 0.7em;
+}
+ .login--button + .login--button {
+  margin-left: 12em;
 }
 .login--vertic-align{
   margin: 0;
